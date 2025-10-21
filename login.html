@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VATRIX BYPASSER - Discord Login</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- General Reset & Layout --- */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Montserrat', system-ui, -apple-system, Segoe UI, Roboto, Arial;
+        }
+
+        html, body {
+            height: 100%;
+            width: 100%;
+            background: #000;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            line-height: 1.6;
+            overflow: hidden; /* CRITICAL FIX: Prevents all scrolling on the page */
+        }
+
+        /* --- Vanta.js Background Net --- */
+        #net-bg {
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+        }
+
+        /* --- Card Container (Glassy Monochromatic Style) --- */
+        .center-wrap {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 30px;
+        }
+
+        .card-container {
+            width: 95%;
+            max-width: 580px;
+            background: rgba(15, 15, 15, 0.95); /* Dark background with transparency */
+            border-radius: 36px;
+            padding: 50px;
+            backdrop-filter: blur(20px); /* Glass effect */
+            /* Adjusted white/gray glow to match your theme */
+            box-shadow: 0 0 80px rgba(255, 255, 255, 0.5), 0 0 10px rgba(0, 0, 0, 0.5); 
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            animation: cardFade 0.7s cubic-bezier(0.2, 0.8, 0.2, 1);
+            position: relative;
+            text-align: center; /* Center the content */
+        }
+
+        @keyframes cardFade {
+            from {opacity: 0; transform: translateY(20px) scale(0.97);}
+            to {opacity: 1; transform: translateY(0) scale(1);}
+        }
+
+        /* --- Header Section --- */
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .icon-box {
+            width: 90px; height: 90px; border-radius: 50%; 
+            background: radial-gradient(circle, #f0f0f0, #909090); /* White/Gray gradient */
+            display: flex; align-items: center; justify-content: center; font-size: 45px; color: #111;
+            box-shadow: 0 0 50px rgba(255, 255, 255, 0.8); margin: 0 auto 20px; 
+            animation: pulse 3s infinite ease-in-out forwards;
+        }
+        @keyframes pulse {
+            0%,100% { transform: scale(1); box-shadow: 0 0 30px rgba(255,255,255,0.7); }
+            50% { transform: scale(1.03); box-shadow: 0 0 60px rgba(255,255,255,1); }
+        }
+        .logo-text {
+            font-size: 2.8rem; font-weight: 900; text-shadow: 0 0 25px rgba(255, 255, 255, 0.7); 
+            margin-bottom: 5px; letter-spacing: -0.05em;
+        }
+        .subtitle {
+            color: #c0c0c0; font-size: 1.1rem; font-weight: 500; margin-top: 10px;
+        }
+        .divider {
+            width: 100%; height: 1px; background: linear-gradient(to right, transparent, rgba(255,255,255,0.2), transparent);
+            margin: 35px auto 0; border-radius: 0;
+        }
+
+        /* --- Discord Button (The White/Gray Style) --- */
+        .discord-button {
+            display: inline-flex; 
+            align-items: center;
+            justify-content: center;
+            width: 80%; /* Adjusted for better appearance */
+            padding: 22px 40px; 
+            border: none; 
+            border-radius: 18px; 
+            font-weight: 900;
+            font-size: 1.3rem; 
+            cursor: pointer; 
+            transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+            position: relative; 
+            text-transform: uppercase; 
+            letter-spacing: 0.05em;
+            text-decoration: none; /* For the <a> tag */
+            
+            /* Theme colors for the button */
+            background: linear-gradient(180deg, #ffffff, #bbbbbb); 
+            color: #111; 
+            box-shadow: 0 10px 40px rgba(255,255,255,0.7);
+            margin-top: 35px;
+        }
+        .discord-button:hover, .discord-button:focus {
+            transform: translateY(-3px) scale(1.02); 
+            box-shadow: 0 15px 50px rgba(255,255,255,1.5); 
+            background: linear-gradient(180deg, #ffffff, #dddddd); 
+            outline: none;
+        }
+        .discord-button .btn-icon { margin-right: 15px; font-size: 1.4em; color: #7289DA; } /* Discord blue for the icon */
+    </style>
+</head>
+<body>
+    <div id="net-bg"></div>
+
+    <div class="center-wrap">
+        <div class="card-container">
+            
+            <header class="header">
+                <div class="icon-box">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <h1 class="logo-text">VATRIX BYPASSER</h1>
+                <p class="subtitle">Secure Utility - Discord Authentication Required</p>
+                <div class="divider"></div>
+            </header>
+
+            <a href="https://discord.com/oauth2/authorize?client_id=1430204560802316450&response_type=code&redirect_uri=https%3A%2F%2Fvatrix-bypasser.vercel.app%2F&scope=identify" 
+               class="discord-button">
+                <i class="fab fa-discord btn-icon"></i> <span>AUTHENTICATE WITH DISCORD</span>
+            </a>
+            
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
+    <script>
+        // Initialize Vanta.js dynamic net background effect
+        VANTA.NET({
+            el: "#net-bg",
+            mouseControls: true,
+            touchControls: true,
+            minHeight: 200.00,
+            minWidth: 200.00,
+            scale: 1.00,
+            scaleMobile: 1.00,
+            color: 0x909090, /* White/Gray-ish net to match the theme */
+            backgroundColor: 0x000000,
+            points: 16.00,
+            maxDistance: 25.00,
+            spacing: 16.00
+        });
+    </script>
+</body>
+</html>
